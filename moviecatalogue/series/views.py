@@ -17,3 +17,8 @@ class CreateView(generics.ListCreateAPIView):
         """Save the post data when creating a new serie."""
         serializer.save()
 
+class DetailsView(generics.RetrieveUpdateDestroyAPIView):
+    """This class handles the http GET, PUT and DELETE requests."""
+
+    queryset = Serie.objects.all()
+    serializer_class = SerieSerializer
